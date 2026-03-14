@@ -1,0 +1,33 @@
+Diferentes Scopes en los beans
+- Estos ultimos 3 normalmente se usan para web applications o spring mvc
+
+- Singleton: One particular Object in the entire application - Scope Default de Spring
+    - Significa que solo se crea una instancia del bean en todo el contenedor de Spring.
+
+- Prototype: We will get a different object every time when you request the object from the container
+    - Cada vez que se solicita el bean, Spring crea una nueva instancia.
+
+- Request: You will need one object or a different object for each request that we receive in the application
+    - Se crea una instancia por cada HTTP request.
+
+- Session: El bean vive durante toda la sesión del usuario.
+    - Flujo:
+        Usuario entra al sitio
+               │
+        Session creada
+               │
+        Bean creado
+               │
+        usuario navega
+               │
+        usuario cierra sesión
+               │
+        bean destruido
+
+    Cada usuario tiene su propia instancia del bean:
+        Usuario A → Bean #1
+        Usuario B → Bean #2
+        Usuario C → Bean #3
+
+
+- Global Session

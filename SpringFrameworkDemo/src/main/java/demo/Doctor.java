@@ -1,10 +1,18 @@
 package demo;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component //Con esta anotacion le digo a SpringCore que quiero crear un componente para los beans de esta clase, usando el xml
+@Scope(scopeName = "prototype") //Con esta anotación decimos que el scope de este componente será de tipo prototype
 public class Doctor implements Staff{
 
-    private String qualification;
+      private String qualification;
 //    private Nurse nurse;
 
+
+    public Doctor() {
+    }
 
     public Doctor(String qualification) {
         this.qualification = qualification;
@@ -22,7 +30,14 @@ public class Doctor implements Staff{
         this.qualification = qualification;
     }
 
-//    public Nurse getNurse() {
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "qualification='" + qualification + '\'' +
+                '}';
+    }
+
+    //    public Nurse getNurse() {
 //        return nurse;
 //    }
 //
