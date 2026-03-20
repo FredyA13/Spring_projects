@@ -1,0 +1,11 @@
+AOP
+
+AOP (Aspect-Oriented Programming, Programación Orientada a Aspectos) es un concepto en Spring que te
+permite separar lógica transversal (cross-cutting concerns) del código principal de tu aplicación.
+
+En lugar de mezclar cosas como:
+- logs
+- seguridad
+- transacciones
+- validaciones
+dentro de tus clases de negocio, AOP te permite inyectarlas automáticamente donde se necesiten.
